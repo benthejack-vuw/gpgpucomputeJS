@@ -1,0 +1,32 @@
+{
+  "name": "gpgpucompute",
+  "version": "0.0.1",
+  "description": "gpgpu compute is a super lightweight library to facilitate multipass gpu computing using shaders and threeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benthejack-vuw/gpgpucomputeJS.git"
+  },
+  "keywords": [
+    "gpu",
+    "computing",
+    "glsl",
+    "fragment",
+    "shader",
+    "computing",
+    "creative",
+    "coding",
+    "particle",
+    "system",
+    "threejs"
+  ],
+  "author": "Ben JAck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benthejack-vuw/gpgpucomputeJS/issues"
+  },
+  "homepage": "https://github.com/benthejack-vuw/gpgpucomputeJS#readme"
+}
