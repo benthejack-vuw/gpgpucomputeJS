@@ -7,7 +7,7 @@ import {
 } from 'three'
 
 
-export default class OutputTextureRect{
+export class OutputTextureRect{
 
   constructor(i_texture, i_size, i_camera){
 

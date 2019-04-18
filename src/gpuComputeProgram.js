@@ -1,11 +1,4 @@
-/*
-*		small library that facilitates GPU comupting with GLSL shaders. uses Three.js
-*
-* 		Ben Jack, 2015
-*
-*/
-
-export default class GPUComputeProgram{
+export class GPUComputeProgram{
 
   constructor(i_renderer){
 

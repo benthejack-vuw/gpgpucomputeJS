@@ -1,10 +1,11 @@
 {
   "name": "fragcompute",
-  "version": "0.0.1",
+  "version": "0.0.15",
   "description": "fragcompute compute is a super lightweight library to facilitate multipass gpu computing using shaders and threeJS",
-  "main": "index.js",
+  "main": "build/fragCompute.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "webpack --mode=production",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,17 @@
     "url": "https://github.com/benthejack-vuw/gpgpucomputeJS/issues"
   },
   "homepage": "https://github.com/benthejack-vuw/gpgpucomputeJS#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0"
+  },
   "dependencies": {
-    "three": "^0.103.0"
+    "three": "^0.103.0",
+    "@babel/polyfill": "^7.0.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

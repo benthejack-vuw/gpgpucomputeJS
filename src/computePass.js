@@ -16,7 +16,7 @@ import {
 } from 'three'
 
 
-export default class ComputePass{
+export class ComputePass{
 
   constructor(i_bufferSize, i_shaderMaterial, i_doubleBuffer, i_precision, i_scene, i_camera){
       this.bufferSize = i_bufferSize;
