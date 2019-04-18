@@ -33,12 +33,10 @@ export default class GPUComputeProgram{
 
 
   render(){
-
-  	for(let i = 0; i < this.passes.length; ++i){
-  		this.passes[i].update();
-  		this.passes[i].render(this.renderer);
-  	}
-
+    this.passes.forEach(pass => {
+      pass.update();
+  		pass.render(this.renderer);
+    })
   }
 
 }

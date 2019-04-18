@@ -14,8 +14,12 @@ export default class OutputTextureRect{
   	this.updateFunction = function(){};
   	this.autoClear = true;
 
-  	this.camera = new OrthographicCamera(-i_size.x/2, i_size.x/2, i_size.y/2, -i_size.y/2, -100, 100);
-    this.camera.position.z = 10;
+    if(i_camera === undefined){
+    	this.camera = new OrthographicCamera(-i_size.x/2, i_size.x/2, i_size.y/2, -i_size.y/2, -100, 100);
+      this.camera.position.z = 10;
+    }else{
+      this.camera = i_camera;
+    }
 
     this.material = new MeshBasicMaterial({map:i_texture});
   	let planeGeom = new PlaneGeometry( i_size.x, i_size.y );
@@ -24,7 +28,6 @@ export default class OutputTextureRect{
   	this.scene.add(this.mesh);
 
   }
-
 
   set_update_function(i_updateFunction){
   	this.updateFunction = i_updateFunction;
@@ -43,12 +46,12 @@ export default class OutputTextureRect{
     }
 
   	i_renderer.render(this.scene, this.camera);
-    
+
   }
 
 }
 
-export function create_output_pass(i_pass){
+export function create_output_pass(i_pass, i_camera){
 
 	var output_pass = new OutputTextureRect(i_pass.get_output_texture(), {x:i_pass.size.x, y:i_pass.size.y});
 

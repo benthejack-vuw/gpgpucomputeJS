@@ -84,15 +84,9 @@ export default class ComputePass{
   }
 
   __update_linked_buffer_textures(){
-
-    const keys = Object.keys(this.linked_buffers);
-    let uniform_name;
-
-    for(let i = 0; i < keys.length; ++i){
-      uniform_name = keys[i];
-      this.set_uniform(uniform_name, this.linked_buffers[uniform_name].get_output_texture());
-    }
-
+    Object.keys(this.linked_buffers).forEach( uniform => {
+      this.set_uniform(uniform, this.linked_buffers[uniform].get_output_texture());
+    })
   }
 
   link_pass_to_uniform(uniform_name, compute_pass){
@@ -175,10 +169,10 @@ export default class ComputePass{
 
   clear(i_renderer){
 
-  	for(let i = 0; i < this.frameBuffers.length; ++i){
-  		i_renderer.clearTarget(this.frameBuffers[i],true);
-    }
-    
+  	this.frameBuffers.forEach( buffer => {
+      i_renderer.clearTarget(this.frameBuffers[i], true);
+    })
+
   }
 
   //renders rgb values to the fbo using a shader
